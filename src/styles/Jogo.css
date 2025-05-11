@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  background: #303030; 
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  margin-top: 36px;
+  background: #3d3e3e;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 60px;
+}
+
+h2 {
+  font-size: 3em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+p {
+  font-size: 1sem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: justify;
+}
+
+.reset {
+  padding: 15px 20px;
+  color: #37393b;
+  border: none;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reset:focus {
+  color: #fff;
+  background: #313232;
+}
+
+.scoreboard{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.game {
+  width: 440px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+
+.item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  background: #fff;
+  transform: rotateY(180deg);
+  transition: 0.25s;
+}
+
+.item.boxOpen {
+  transform: rotateY(0deg);
+}
+
+.item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #393939;
+  transition: 0.25s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+}
+
+.boxOpen:after,
+.boxMatch:after {
+  transform: rotateY(180deg);
+}
+
+.planet {
+  display: block;
+  max-width: 100%;
+}
+
+.trash {
+  width: 750px; 
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 20px;
+}
+
+.progress {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px;
+  width: 90%;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 
+  0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+@keyframes progressAnimationStrike {
+  from { background-position: 0 0; }
+  to { background-position: 40px 0; }
+}
+
+.trash-list {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+}
+
+.trash-box {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.trash-icon {
+  width: 100%;
+  max-width: 90px;
+}
+
+.progress-bar-container {
+  background-color: #d6d4d4;
+  padding: 8px;
+  width: 100%;
+}
+
+.trash-title {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #555;
+}
+
+.trash-count {
+  font-size: 14px;
+  text-align: center;
+  text-transform: initial;
+  color: #2f2f2f;
+}
+
+.trash-box:hover {
+  transform: scale(1.1); 
+}

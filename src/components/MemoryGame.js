@@ -103,6 +103,7 @@ const MemoryGame = () => {
             />
           ))}
           <ScoreBoard score={score} attempts={attempts} onReset={resetGame} />
+
         </div>
         <div className="trash">
           <PlanetProgress

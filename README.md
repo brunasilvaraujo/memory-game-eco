@@ -25,6 +25,12 @@ Um jogo da memória educativo feito em React, onde os jogadores combinam pares d
 
 ---
 
+## 🙌 Contribuição
+
+Contribuições são bem-vindas! Para sugerir melhorias, envie um pull request ou abra uma issue.
+
+---
+
 ## 📦 Instalação
 
 Clone o repositório e execute:
@@ -33,6 +39,3 @@ Clone o repositório e execute:
 npm install
 npm start
 
-## 🙌 Contribuição
-
-Contribuições são bem-vindas! Para sugerir melhorias, envie um pull request ou abra uma issue.
